@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>robot</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<input type="text" id="txt_mess"/>
+	<input type="button" value="submit" id="sub_mess"/>
+</body>
+<script>
+	$("#sub_mess").click(function(){
+		var obj={};
+		obj.mess = $("#txt_mess").val();
+		$.ajax({
+			url:"/action/send",
+			data:obj,
+			success:function(data){
+				alert(data)
+			}
+		})
+	})
+</script>
+</html>
